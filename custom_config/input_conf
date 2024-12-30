@@ -1,0 +1,9 @@
+# Enable touchpad and configure gestures
+input "type:touchpad" {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled # Disable while typing
+    scroll_method two_finger
+    middle_emulation enabled
+}
+
