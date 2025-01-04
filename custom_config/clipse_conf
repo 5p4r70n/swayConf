@@ -1,0 +1,18 @@
+# Run clipse listener on startup
+exec --no-startup-id clipse -listen
+
+# Ensure clipse window is floating and has a specific size
+#for_window [class="clipse"] floating enable
+#for_window [class="clipse"] resize set 622 652
+
+for_window [app_id="clipse"] floating enable
+for_window [app_id="clipse"] resize set 622 652
+for_window [app_id="clipse"] move position center
+for_window [app_id="clipse"] border none  # Border thickness
+
+# Simulate rounded corners by adjusting the gaps
+#for_window [app_id="clipse"] gaps inner 20  # Inner gap for spacing around the window
+
+# Bind Super+V to open clipse in kitty terminal
+bindsym $mod+v exec kitty --class clipse -e 'clipse'
+

@@ -1,0 +1,7 @@
+# Toggle workspaces
+	bindsym $mod+TAB workspace back_and_forth
+
+# Switch to prev/next workspace on current output
+	bindsym $mod+Page_Down workspace next_on_output
+	bindsym $mod+Page_Up workspace prev_on_output
+
