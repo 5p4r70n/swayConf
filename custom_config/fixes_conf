@@ -1,0 +1,4 @@
+
+# for updating the WAYLAND_DISPLAY,XDG_CURRENT_DESKTOP variables in DBUS, IDK why it wont picking up by systemd
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

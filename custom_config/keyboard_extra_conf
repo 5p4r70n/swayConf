@@ -1,7 +1,28 @@
+
+
+# Your preferred terminal emulator
+	set $term konsole
+# Your preferred application launcher
+	set $menu rofi -show combi -combi-modes "window,drun" -modes combi
+
+
+# Start a terminal
+    	bindsym $mod+Return exec $term
+
+# Start your launcher
+    	bindsym $mod+d exec $menu
+
+
+
 # Toggle workspaces
 	bindsym $mod+TAB workspace back_and_forth
 
 # Switch to prev/next workspace on current output
 	bindsym $mod+Page_Down workspace next_on_output
 	bindsym $mod+Page_Up workspace prev_on_output
+
+# Player control
+	bindsym $mod+Shift+n exec playerctl next
+	bindsym $mod+Shift+b exec playerctl previous
+	bindsym $mod+Shift+p exec playerctl play-pause
 
