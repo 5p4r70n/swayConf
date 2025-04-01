@@ -3,8 +3,9 @@
 # Your preferred terminal emulator
 	set $term konsole
 # Your preferred application launcher
-	set $menu rofi -show combi -combi-modes "window,drun" -modes combi
-
+	set $menu rofi -show combi -combi-modes "drun" -modes combi
+	# for switch between opened windows	
+	bindsym Mod1+Tab exec rofi -show window
 
 # Start a terminal
     	bindsym $mod+Return exec $term
@@ -25,4 +26,30 @@
 	bindsym $mod+Shift+n exec playerctl next
 	bindsym $mod+Shift+b exec playerctl previous
 	bindsym $mod+Shift+p exec playerctl play-pause
+
+
+#floting terminal
+set  {
+  $term wezterm
+  $term_id org.wezfurlong.wezterm
+}
+
+for_window {
+  # terminal
+  [app_id=$term_id] {
+    move to scratchpad
+    [app_id=$term_id] scratchpad show
+    border none, move position center, resize set width 100 ppt height 100 ppt
+  }
+}
+
+bindsym --to-code {
+  # Terminal
+  F1      exec swaymsg [app_id=$term_id]  scratchpad show || exec $term , border none, move position center, resize set width 100 ppt height 100 ppt
+}
+
+
+#paste to restricted input boxs
+#convert clipboard to keystroks
+	bindsym $mod+Shift+s exec ~/myScripts/pasteClipBoardAsKeyStrokes.sh
 

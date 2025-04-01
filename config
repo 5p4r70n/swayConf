@@ -51,5 +51,12 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 include ~/.config/sway/waybar/config
 
+include ~/.config/sway/custom_config/wall_conf
 
-#include /etc/sway/config.d/*
+include ~/.config/sway/custom_config/dock_conf
+
+#for touch pad acceleration
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+    pointer_accel 0.5  # Increase speed (-1 to 1, default is 0)
+}
+
